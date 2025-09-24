@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets 
+from .models import Motos
+from .serializers import MotosSerializer
 
-# Create your views here.
+class MotosViewSet(viewsets.ModelViewSet):
+    queryset = Motos.objects.all()
+    serializer_class = MotosSerializer
